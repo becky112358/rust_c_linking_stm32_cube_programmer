@@ -1,4 +1,5 @@
 Attempts to call a C library from Rust
+<br><br>
 
 ### branch `main`
 This is my preferred method. A Rust crate wraps the C library.  Other Rust crates can then include the Rust wrapper crate, and not have to worry about any C libraries.
@@ -20,6 +21,7 @@ I could not find how to feed in the path correctly, without Rust reporting:
 ```
     error: renaming of the library `C` was specified, however this crate contains no `#[link(...)]` attributes referencing this library.
 ```
+<br><br>
 
 ### branch `all_in_one`
 In the `main` branch it seemed like maybe the problem was that `libstm32_cube_programmer_sys` could find the C library but `caller` could not. So I tried discarding the separate Rust crate, and having a single Rust crate which both wraps the C library and calls the C functions.
@@ -29,6 +31,7 @@ This time I get the following error, plus a bonus warning:
     = note: caller.59pofysds2mkvvjr.rcgu.o : error LNK2019: unresolved external symbol disconnect referenced in function _ZN6caller4main17ha79648c0a9e86ed0E
     .\drivers\CubeProgrammer_API.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
 ```
+<br><br>
 
 ### branch `link_search`
 I searched a lot on the internet and found lots of different ways to call a C library from Rust. One way is to use `link-search` rather than `link-lib`. This surely only makes things harder for the compiler because you make it do more work. But I am stuck and need to try different things!
