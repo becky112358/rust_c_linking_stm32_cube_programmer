@@ -1,7 +1,9 @@
-use libstm32_cube_programmer_sys::disconnect;
+#[link(name = "CubeProgrammer_API")]
+extern {
+    fn disconnect();
+}
 
 fn main() {
-    println!("Hello, world!");
     unsafe {
         disconnect();
     }
