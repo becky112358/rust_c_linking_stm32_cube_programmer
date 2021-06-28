@@ -41,3 +41,11 @@ This time I get the following error, plus the bonus warning:
     = note: caller.59pofysds2mkvvjr.rcgu.o : error LNK2019: unresolved external symbol __imp_disconnect referenced in function _ZN6caller4main17ha79648c0a9e86ed0E
     .\drivers\CubeProgrammer_API.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
 ```
+<br><br>
+
+### branch `symmetric_directories`
+It works!!
+
+Put the .lib file in a directory which is symmetrically pointed at by `libstm32_cube_programmer_sys` and by `caller`. Ok, that's pretty hacky... It will do for now...
+
+And also, use the x64 library rather than the x32 library.
