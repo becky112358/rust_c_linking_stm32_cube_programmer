@@ -1,4 +1,4 @@
 #include <stdint.h>
-#include "drivers/DisplayManager.h"
-#include "drivers/DeviceDataStructure.h"
-#include "drivers/CubeProgrammer_API.h"
+#include "../DisplayManager.h"
+#include "../DeviceDataStructure.h"
+#include "../CubeProgrammer_API.h"
