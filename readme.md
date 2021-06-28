@@ -41,3 +41,5 @@ This time I get the following error, plus the bonus warning:
     = note: caller.59pofysds2mkvvjr.rcgu.o : error LNK2019: unresolved external symbol __imp_disconnect referenced in function _ZN6caller4main17ha79648c0a9e86ed0E
     .\drivers\CubeProgrammer_API.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
 ```
+
+*Update*: With the x64 library instead of the x86 library, it works!
